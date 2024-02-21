@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio</title>
+    <style>
+        h1{
+        text-align: center;
+        }
+        section{
+            background-color: rgba(122, 222, 255, 0.705);
+            margin: auto;
+            height: 600px;
+        }
+        #first{
+            font-size: 2em;
+        }
+        body{
+            background-color: rgba(0, 0, 255, 0.416);
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Reajuste Salarial</h1>
+    </header>
+
+    <section>
+        <input type="button" value="Reajustar Salário" onclick="verificar()">
+        <p>Clique no botão acima para iniciar.</p>
+        <p id="first"></p>
+        <p id="second"></p>
+        <p id="third"></p>
+        <p id="fourth"></p>
+    </section>
+    <script>
+        function verificar(){
+            let first =document.querySelector('#first')
+            let second = document.querySelector('#second')
+            let third = document.querySelector('#third')
+            let fourth = document.querySelector('#fourth')
+            let name = prompt('Qual é o nome do funcionário?')
+            let res = Number(prompt(`Qual é o salário de ${name}?`))
+            let por = Number(prompt(`O salário do ${name} vai ser reajustado em qual porcentagem?`))
+
+            first.innerHTML=`<strong>${name} recebeu um aumento salarial!</strong>`
+            second.innerHTML=`O salário atual era R$ ${res}.`
+            third.innerHTML=`Com um aumento de ${por}%, o salário vai aumentar R$ ${res/100*por} no próximo mês.`
+            fourth.innerHTML=`E a partir daí, ${name} vai passar a ganhar R$${res/100*por+res}`
+            
+
+
+        }
+    </script>
+</body>
+</html>
